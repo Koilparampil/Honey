@@ -64,7 +64,7 @@ const AuthBuild = ({setShowBuild, isSignUp }) => {
                         name='email'
                         placeholder="email"
                         required={true}
-                        onChange={(event) => setEmail(event.target.value)}
+                        onChange={(event) => setEmail(event.target.value.toLowerCase())}
                     />
                     <input
                         className="form-control"

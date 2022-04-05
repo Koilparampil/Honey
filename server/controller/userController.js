@@ -49,6 +49,9 @@ module.exports = {
         } else {
           return user;
         }
+      }).catch((err) => {
+        console.log(err);
+        return res.status(500).json(err);
       });
   },
 

@@ -45,6 +45,7 @@ module.exports = {
       .populate("posts")
       .then((user) => {
         if (!user) {
+          console.log("this Fired")
           res.status(404).json({ message: "No user with that ID" });
         } else {
           return user;

@@ -67,7 +67,7 @@ router.route('/login').post(async(req,res) => {
                 })
                 res.status(201).json({token, userId:user.ManmadeID})
             }else{
-                res.send("Invalid Credentials").status(400)
+                res.status(400)
             }
         })
         .catch((err) => {

@@ -54,9 +54,12 @@ checkExist(sanitizedEmail).then((a)=>{
 
 //--------------------- LogIn Routes ------------------------
 router.route('/login').post(async(req,res) => {
-    const {email,password} =req.body
+
     try{
+        const {email,password} =req.body
         logInUser(req, res).then(async (user) => {
+            console.log(user.password)
+            console.log(password)
             const correctPassword = await bcrypt.compare(password, user.password) 
             if (user && correctPassword) {
                 const token =jwt.sign(user.toJSON(),email, {
